@@ -3,9 +3,9 @@ describe('Logo Navigation Check', () => {
       
       cy.visit('https://www.epam.com/about');
   
-      
+      // click on the logo
       cy.get('.header__logo.header__logo-light').click();
-  
+      // verify the URL after redirect
       cy.url().should('eq', 'https://www.epam.com/');
     });
   });

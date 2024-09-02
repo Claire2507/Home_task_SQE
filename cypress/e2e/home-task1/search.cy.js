@@ -2,14 +2,14 @@ describe('Search Function Verification', () => {
     it('should show the search results for "AI"', () => {
       
       cy.visit('https://www.epam.com/');
-  
+      // Click on the search icon to open the search input
       cy.get('.search-icon').click();
-  
+      // Find the search input field and type 'AI'
       cy.get('.search-results__input-holder').type('AI{enter}');
-      //cy.get('.search-results__submit-text.button-text').click();
+      // verify search results
       cy.get('.search-results__counter')
         .should('exist')
-        .and('be.visible') // Проверяем, что элемент видим
+        .and('be.visible') 
         .and('contain.text', 'results for "AI"');
   
     });
